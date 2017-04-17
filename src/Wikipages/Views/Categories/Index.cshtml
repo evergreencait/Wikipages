@@ -2,16 +2,18 @@
 
 <html>
 <head>
-    <title>Wikipages</title>
+    <title>Wikipages - Details</title>
 </head>
 <body>
-    <h2>Wikipages</h2>
+    <h2>Details</h2>
     <h4>@Html.DisplayNameFor(model => model.category)</h4>
     <ul>
         @foreach (var listCategory in Model)
         {
-            <li>@Html.DisplayFor(modelCategory => listCategory.category)</li>
+            <li>@Html.DisplayFor(modelCategory => listCategory.category) | @Html.ActionLink("Details", "Details", new { id = listCategory.id })</li>
         }
     </ul>
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+  
 </body>
 </html>

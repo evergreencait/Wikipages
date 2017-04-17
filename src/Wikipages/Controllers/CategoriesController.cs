@@ -11,5 +11,11 @@ namespace Wikipages.Controllers
         {
             return View(db.Categories.ToList());
         }
+
+        public IActionResult Details(int id)
+        {
+            var thisCategory = db.Categories.FirstOrDefault(categories => categories.id == id);
+            return View(thisCategory);
+        }
     }
 }
