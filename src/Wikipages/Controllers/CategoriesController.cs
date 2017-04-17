@@ -1,7 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Wikipages.Models;
-
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 namespace Wikipages.Controllers
 {
     public class CategoriesController : Controller
@@ -16,6 +20,19 @@ namespace Wikipages.Controllers
         {
             var thisCategory = db.Categories.FirstOrDefault(categories => categories.id == id);
             return View(thisCategory);
+        }
+        
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Category currentCategory)
+        {
+            db.Categories.Add(currentCategory);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

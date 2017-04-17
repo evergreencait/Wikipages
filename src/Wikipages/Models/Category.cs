@@ -12,6 +12,6 @@ namespace Wikipages.Models
     {
         [Key]
         public int id { get; set; }
-        public string category { get; set; }
+        public string name { get; set; }
     }
 }
