@@ -9,6 +9,7 @@ namespace Wikipages.Models
     public class WikipagesContext : DbContext
     {
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Business> Businesses { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

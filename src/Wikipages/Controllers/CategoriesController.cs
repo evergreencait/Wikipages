@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Wikipages.Models;
-using System.Linq;
 using Microsoft.EntityFrameworkCore;
 namespace Wikipages.Controllers
 {
