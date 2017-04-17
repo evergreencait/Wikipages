@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Wikipages.Models.Category>
+
+<html>
+<head>
+    <title>Wikipages</title>
+</head>
+<body>
+    <h2>Wikipages</h2>
+    <h4>@Html.DisplayNameFor(model => model.category)</h4>
+    <ul>
+        @foreach (var listCategory in Model)
+        {
+            <li>@Html.DisplayFor(modelCategory => listCategory.category)</li>
+        }
+    </ul>
+</body>
+</html>
